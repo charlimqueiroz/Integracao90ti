@@ -1,0 +1,6 @@
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\bin\Debug\Integracao90ti.Comum.Enum.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\bin\Debug\Integracao90ti.Comum.Enum.pdb
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enumerator.csprojAssemblyReference.cache
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enumerator.csproj.CoreCompileInputs.cache
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.pdb

@@ -1,0 +1,5 @@
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\bin\Debug\Integracao90ti.Comum.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\bin\Debug\Integracao90ti.Comum.pdb
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Comum.csproj.CoreCompileInputs.cache
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.pdb

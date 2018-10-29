@@ -1,0 +1,5 @@
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\Integracao90ti.Persistencia.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\Integracao90ti.Persistencia.pdb
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Persistencia\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Persistencia\Persistencia\obj\Debug\Integracao90ti.Persistencia.dll
+D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Persistencia\Persistencia\obj\Debug\Integracao90ti.Persistencia.pdb
