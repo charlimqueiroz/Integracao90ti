@@ -19,10 +19,13 @@ namespace Integracao90ti.Main.GUI
         private DataTable dataTableItensPlanilha = new DataTable();
         private long idComposicaoRetorno = 0;
         private long idItemPlanilhaRetorno = 0;
+        private long idPlanilha = 0;
 
         public FHelpComposicao(long idProjeto, long idPlanilha)
         {
             InitializeComponent();
+
+            this.idPlanilha = idPlanilha;
 
             CriarDataTableEGridComposicao();
             CriarDataTableEGridItensPlanilha();
@@ -36,6 +39,8 @@ namespace Integracao90ti.Main.GUI
 
             if (idPlanilha == 0)
                 composicoes = FabricaDeRepositorios<IComposicaoRepositorio>.Instancia.BuscarPorIdProjeto(idProjeto).ToList();
+            else
+                composicoes = FabricaDeRepositorios<IComposicaoRepositorio>.Instancia.BuscarPorIdPlanilha(idPlanilha).ToList(); 
 
             foreach (var composicao in composicoes)
             {
@@ -48,15 +53,18 @@ namespace Integracao90ti.Main.GUI
 
         private void IncluirItemGradeItemPlanilha(long idComposicao)
         {
-            //List<Composicao> composicoes = new List<Composicao>();
+            List<ItemPlanilha> itensPlanilha = new List<ItemPlanilha>();
 
-            var itensPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorIdComposicao(idComposicao).ToList();
+            if (this.idPlanilha == 0)
+                itensPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorIdComposicao(idComposicao).ToList();
+            else
+                itensPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorIdPlanilhaEComposicao(idComposicao, idPlanilha).ToList();
 
             foreach (var item in itensPlanilha)
             {
                 DataRow dataRow = dataTableItensPlanilha.Rows.Add(new object[]
                 {
-                    item.Codigo, item.Nome
+                    item.Codigo, item.Nome, item.Id
                 });
             }
         }
@@ -98,20 +106,50 @@ namespace Integracao90ti.Main.GUI
                 idComposicaoRetorno = (long)dtRow["Id"];
 
                 if (dgvItemPlanilha.Rows.Count > 1)
-                {
-
-
-                    foreach (DataRowCollection item in dgvItemPlanilha.Rows)
+                {                    
+                    foreach (DataGridViewRow row in dgvItemPlanilha.Rows)
                     {
-                        item
+                        if (dgvItemPlanilha.Rows[row.Index].Cells[0].Value != null)
+                        {
+                            idItemPlanilhaRetorno = (long)dgvItemPlanilha.Rows[row.Index].Cells["IdItemPlanilha"].Value;
+                            break;
+                        }
+
+                        //foreach (DataGridViewCell cell in dgvItemPlanilha.Rows[row.Index].Cells[0])
+                        //{
+                        //    if (cell.ColumnIndex == 0)
+                        //    {
+                        //        if (cell.Value != null)
+                        //        {
+                        //            id
+                        //        }
+                        //        else
+                        //        {
+                        //            //Desmarcado
+                        //        }
+                        //    }
+                        //}
                     }
-                    CheckBox cb = (CheckBox)e.Row.FindControl("ckblalala");
+
+                    //foreach (DataRowCollection item in dgvItemPlanilha.Rows)
+                    //{
+                    //    item
+                    //}
+                    //CheckBox cb = (CheckBox)e.Row.FindControl("ckblalala");
                 }
 
             }
 
         }
 
+        internal long GetIdItemPlanilha()
+        {
+            return idItemPlanilhaRetorno;
+        }
 
+        internal long GetIdComposicao()
+        {
+            return idComposicaoRetorno;
+        }
     }
 }

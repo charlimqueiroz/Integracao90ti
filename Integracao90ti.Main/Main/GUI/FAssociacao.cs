@@ -81,30 +81,38 @@ namespace Integracao90ti.Main.GUI
             dataTableItens.Columns.Add("CodigoCPU", typeof(string));
             dataTableItens.Columns.Add("DescricaoCPU", typeof(string));
             dataTableItens.Columns.Add("CodigoItem", typeof(string));
+            dataTableItens.Columns.Add("Quantidade", typeof(double));
+            dataTableItens.Columns.Add("IdItemPlanilha", typeof(long));
+            dataTableItens.Columns.Add("IdComposicao", typeof(long));
 
             dgvAssociarComposicao.DataSource = dataTableItens;
         }
 
         private void MontarTreeView()
         {
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Columns), "Colunas");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_StructuralColumns), "Coluna Estrutural");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Stairs), "Escadas");
-            IncluirItemTreeView(Coletor.BuscarFamilia<Ceiling>(_document, new BuiltInCategory()), "Forro");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_StructuralFoundation), "Fundação Estrutural");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_RailingHandRail), "Guarda Corpo");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Windows), "Janela");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Furniture), "Mobiliário");
-            IncluirItemTreeView(Coletor.BuscarFamilia<Wall>(_document, new BuiltInCategory()), "Parede");
-            IncluirItemTreeView(Coletor.BuscarFamilia<Floor>(_document, new BuiltInCategory()), "Pisos");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Doors), "Porta");
-            IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Ramps), "Rampas");
-            IncluirItemTreeView(Coletor.BuscarFamilia<RoofBase>(_document, new BuiltInCategory()), "Telhado");
+            Familias familia = new Familias();
+            IList<Familias> familias = familia.BuscarFamilias(_document);
+
+            IncluirItemTreeViewFamilia(familias);
+
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Columns), "Colunas");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_StructuralColumns), "Coluna Estrutural");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Stairs), "Escadas");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<Ceiling>(_document, new BuiltInCategory()), "Forro");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_StructuralFoundation), "Fundação Estrutural");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_RailingHandRail), "Guarda Corpo");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Windows), "Janela");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Furniture), "Mobiliário");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<Wall>(_document, new BuiltInCategory()), "Parede");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<Floor>(_document, new BuiltInCategory()), "Pisos");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Doors), "Porta");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<FamilyInstance>(_document, BuiltInCategory.OST_Ramps), "Rampas");
+            //IncluirItemTreeView(Coletor.BuscarFamilia<RoofBase>(_document, new BuiltInCategory()), "Telhado");
         }
 
         private void IncluirItemTreeView<T>(List<T> listaFamilias, string nomeFamilia)
         {
-            TreeNode treeNode = new TreeNode(nomeFamilia); ;
+            TreeNode treeNode = new TreeNode(nomeFamilia);
             foreach (var item in listaFamilias)
             {
                 string nomeTipo = string.Empty;
@@ -117,6 +125,33 @@ namespace Integracao90ti.Main.GUI
                 }
             }
             tvFamilias.Nodes.Add(treeNode);
+        }
+
+        private void IncluirItemTreeViewFamilia(IList<Familias> listaFamilias)
+        {
+            var familiasPai = listaFamilias.Select(i => i.Nome).Distinct().ToList();
+
+            foreach (var item in familiasPai)
+            {
+                TreeNode treeNode = new TreeNode(item);
+                treeNode.Name = item;
+                tvFamilias.Nodes.Add(treeNode);
+            }
+
+            foreach (TreeNode node in tvFamilias.Nodes)
+            {
+                var nomeNo = node.Name;
+                foreach (var item in listaFamilias)
+                {
+                    if (nomeNo == item.Nome && !string.IsNullOrEmpty(item.NomeTipo))
+                    {
+                        TreeNode treeNode = new TreeNode(item.NomeTipo);
+                        treeNode.Name = item.NomeTipo;
+                        treeNode.Tag = listaFamilias.Where(i => i.NomeTipo == item.NomeTipo).Sum(i => i.Quantidade);
+                        node.Nodes.Add(treeNode);
+                    }
+                }
+            }
         }
 
         private static bool noExiste<T>(TreeNode treeNode, T item, out string nomeTipo)
@@ -133,8 +168,16 @@ namespace Integracao90ti.Main.GUI
                 return true;
         }
 
+        private static string BuscarNomeTipo(Familias item)
+        {
+            var props = item.GetType().GetProperties();
+            var prop = props.Where(i => i.Name == "Name").FirstOrDefault();
+
+            return prop.GetValue(item, null).ToString();
+        }
+
         private void CheckNode(TreeNode node)
-        {            
+        {
             foreach (TreeNode nodo in node.Nodes)
             {
                 nodo.Checked = node.Checked;
@@ -165,6 +208,19 @@ namespace Integracao90ti.Main.GUI
                 FHelpComposicao fHelpComposicao = new FHelpComposicao(idProjeto, idPlanilha);
                 fHelpComposicao.StartPosition = FormStartPosition.CenterScreen;
                 fHelpComposicao.ShowDialog();
+
+
+                if (fHelpComposicao.GetIdItemPlanilha() != 0)
+                {
+                    ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(fHelpComposicao.GetIdItemPlanilha());
+
+                    IncluirItemGrade(true, e.RowIndex, string.Empty, itemPlanilha.Composicao.Codigo, itemPlanilha.Composicao.Descricao, itemPlanilha.Codigo, itemPlanilha.Id, itemPlanilha.Composicao.Id, 0);
+                }
+                else
+                    if (fHelpComposicao.GetIdComposicao() != 0)
+                {
+                    Composicao composicao = FabricaDeRepositorios<IComposicaoRepositorio>.Instancia.BuscarPorId(fHelpComposicao.GetIdComposicao());
+                }
             }
         }
 
@@ -176,16 +232,39 @@ namespace Integracao90ti.Main.GUI
             foreach (TreeNode nodo in e.Node.Nodes)
             {
                 if (nodo.Checked)
-                    IncluirItemGrade(nodo.Text);
+                    IncluirItemGrade(false, 0, nodo.Text, string.Empty, string.Empty, string.Empty, 0, 0, Convert.ToDouble(nodo.Tag));
             }
         }
 
-        private void IncluirItemGrade(string text)
+        private void IncluirItemGrade(bool atualizar, int index, string tipo, string codigoComposicao, string descricaoComposicao, string codigoItemPlanilha, long idItemPlanilha, long idComposicao, double quantidade)
         {
-            DataRow dataRow = dataTableItens.Rows.Add(new object[]
+            if (atualizar)
             {
-                text, "", "", ""
-            });
+                dgvAssociarComposicao.BeginEdit(false);
+                var dataRow = dataTableItens.Rows[index];
+
+                //dataTableItens.Columns.Add("Tipo", typeof(string));
+                //dataTableItens.Columns.Add("CodigoCPU", typeof(string));
+                //dataTableItens.Columns.Add("DescricaoCPU", typeof(string));
+                //dataTableItens.Columns.Add("CodigoItem", typeof(string));
+                //dataTableItens.Columns.Add("IdItemPlanilha", typeof(long));
+                //dataTableItens.Columns.Add("IdComposicao", typeof(long));
+
+                dataRow["CodigoCPU"] = codigoComposicao;
+                dataRow["DescricaoCPU"] = descricaoComposicao;
+                dataRow["CodigoItem"] = codigoItemPlanilha;
+                dataRow["IdItemPlanilha"] = idItemPlanilha;
+                dataRow["IdComposicao"] = idComposicao;
+
+                dgvAssociarComposicao.Update();
+            }
+            else
+            {
+                DataRow dataRow = dataTableItens.Rows.Add(new object[]
+                {
+                    tipo, codigoComposicao, descricaoComposicao, codigoItemPlanilha, quantidade.ToString("N2")
+                });
+            }
         }
 
         private void cbBaseDados_SelectedIndexChanged(object sender, EventArgs e)

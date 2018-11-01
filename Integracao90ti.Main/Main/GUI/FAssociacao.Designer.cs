@@ -43,12 +43,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvAssociarComposicao = new System.Windows.Forms.DataGridView();
+            this.tvFamilias = new System.Windows.Forms.TreeView();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescricaoCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Associar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tvFamilias = new System.Windows.Forms.TreeView();
+            this.IdComposicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdItemPlanilha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociarComposicao)).BeginInit();
@@ -56,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(678, 456);
+            this.button1.Location = new System.Drawing.Point(791, 456);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 23);
             this.button1.TabIndex = 5;
@@ -65,7 +68,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(807, 456);
+            this.button2.Location = new System.Drawing.Point(920, 456);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 23);
             this.button2.TabIndex = 6;
@@ -82,7 +85,7 @@
             this.groupBox1.Controls.Add(this.cbPlanilha);
             this.groupBox1.Location = new System.Drawing.Point(4, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(936, 70);
+            this.groupBox1.Size = new System.Drawing.Size(1043, 70);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Base";
@@ -90,7 +93,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(623, 22);
+            this.label3.Location = new System.Drawing.Point(695, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 10;
@@ -99,7 +102,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(313, 22);
+            this.label2.Location = new System.Drawing.Point(348, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 9;
@@ -120,7 +123,7 @@
             this.cbBaseDados.FormattingEnabled = true;
             this.cbBaseDados.Location = new System.Drawing.Point(6, 41);
             this.cbBaseDados.Name = "cbBaseDados";
-            this.cbBaseDados.Size = new System.Drawing.Size(304, 21);
+            this.cbBaseDados.Size = new System.Drawing.Size(339, 21);
             this.cbBaseDados.TabIndex = 7;
             this.cbBaseDados.SelectedIndexChanged += new System.EventHandler(this.cbBaseDados_SelectedIndexChanged);
             // 
@@ -128,9 +131,9 @@
             // 
             this.cbProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProjeto.FormattingEnabled = true;
-            this.cbProjeto.Location = new System.Drawing.Point(316, 41);
+            this.cbProjeto.Location = new System.Drawing.Point(351, 41);
             this.cbProjeto.Name = "cbProjeto";
-            this.cbProjeto.Size = new System.Drawing.Size(304, 21);
+            this.cbProjeto.Size = new System.Drawing.Size(339, 21);
             this.cbProjeto.TabIndex = 6;
             this.cbProjeto.SelectedIndexChanged += new System.EventHandler(this.cbProjeto_SelectedIndexChanged);
             // 
@@ -138,9 +141,9 @@
             // 
             this.cbPlanilha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPlanilha.FormattingEnabled = true;
-            this.cbPlanilha.Location = new System.Drawing.Point(628, 41);
+            this.cbPlanilha.Location = new System.Drawing.Point(698, 41);
             this.cbPlanilha.Name = "cbPlanilha";
-            this.cbPlanilha.Size = new System.Drawing.Size(304, 21);
+            this.cbPlanilha.Size = new System.Drawing.Size(339, 21);
             this.cbPlanilha.TabIndex = 5;
             // 
             // groupBox2
@@ -153,7 +156,7 @@
             this.groupBox2.Controls.Add(this.tvFamilias);
             this.groupBox2.Location = new System.Drawing.Point(4, 88);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(936, 362);
+            this.groupBox2.Size = new System.Drawing.Size(1043, 362);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Associação Revit";
@@ -169,7 +172,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(857, 29);
+            this.btnBuscar.Location = new System.Drawing.Point(962, 29);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 24);
             this.btnBuscar.TabIndex = 14;
@@ -180,7 +183,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(217, 32);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(634, 20);
+            this.textBox1.Size = new System.Drawing.Size(739, 20);
             this.textBox1.TabIndex = 13;
             // 
             // label4
@@ -200,14 +203,26 @@
             this.CodigoCPU,
             this.DescricaoCPU,
             this.CodigoItem,
-            this.Associar});
+            this.Quantidade,
+            this.Associar,
+            this.IdComposicao,
+            this.IdItemPlanilha});
             this.dgvAssociarComposicao.Location = new System.Drawing.Point(217, 58);
             this.dgvAssociarComposicao.MultiSelect = false;
             this.dgvAssociarComposicao.Name = "dgvAssociarComposicao";
             this.dgvAssociarComposicao.RowHeadersVisible = false;
-            this.dgvAssociarComposicao.Size = new System.Drawing.Size(715, 298);
+            this.dgvAssociarComposicao.Size = new System.Drawing.Size(820, 298);
             this.dgvAssociarComposicao.TabIndex = 11;
             this.dgvAssociarComposicao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // tvFamilias
+            // 
+            this.tvFamilias.CheckBoxes = true;
+            this.tvFamilias.Location = new System.Drawing.Point(8, 54);
+            this.tvFamilias.Name = "tvFamilias";
+            this.tvFamilias.Size = new System.Drawing.Size(203, 301);
+            this.tvFamilias.TabIndex = 10;
+            this.tvFamilias.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvFamilias_AfterCheck);
             // 
             // Tipo
             // 
@@ -235,6 +250,12 @@
             this.CodigoItem.HeaderText = "Código Item Planilha";
             this.CodigoItem.Name = "CodigoItem";
             // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            // 
             // Associar
             // 
             this.Associar.HeaderText = "Associar";
@@ -243,20 +264,25 @@
             this.Associar.ToolTipText = "...";
             this.Associar.Width = 50;
             // 
-            // tvFamilias
+            // IdComposicao
             // 
-            this.tvFamilias.CheckBoxes = true;
-            this.tvFamilias.Location = new System.Drawing.Point(8, 54);
-            this.tvFamilias.Name = "tvFamilias";
-            this.tvFamilias.Size = new System.Drawing.Size(203, 301);
-            this.tvFamilias.TabIndex = 10;
-            this.tvFamilias.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvFamilias_AfterCheck);
+            this.IdComposicao.DataPropertyName = "IdComposicao";
+            this.IdComposicao.HeaderText = "IdComposicao";
+            this.IdComposicao.Name = "IdComposicao";
+            this.IdComposicao.Visible = false;
+            // 
+            // IdItemPlanilha
+            // 
+            this.IdItemPlanilha.DataPropertyName = "IdItemPlanilha";
+            this.IdItemPlanilha.HeaderText = "IdItemPlanilha";
+            this.IdItemPlanilha.Name = "IdItemPlanilha";
+            this.IdItemPlanilha.Visible = false;
             // 
             // FAssociacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 482);
+            this.ClientSize = new System.Drawing.Size(1051, 482);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
@@ -293,6 +319,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoCPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescricaoCPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewButtonColumn Associar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdComposicao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdItemPlanilha;
     }
 }

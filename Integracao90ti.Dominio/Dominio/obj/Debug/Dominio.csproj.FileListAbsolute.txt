@@ -86,3 +86,5 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dom
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dominio\obj\Debug\Dominio.csproj.CopyComplete
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dominio\obj\Debug\Integracao90ti.Dominio.dll
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dominio\obj\Debug\Integracao90ti.Dominio.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dominio\bin\Debug\Integracao90ti.Utils.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Dominio\Dominio\bin\Debug\Integracao90ti.Utils.pdb

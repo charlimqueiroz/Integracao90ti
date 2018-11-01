@@ -8,3 +8,4 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enume
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enum.csproj.CoreCompileInputs.cache
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.dll
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enum.csprojAssemblyReference.cache

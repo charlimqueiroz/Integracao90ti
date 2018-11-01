@@ -63,3 +63,5 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistenci
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\Integracao90ti.Comum.Enum.pdb
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\RevitAPI.xml
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\Integracao90ti.Utils.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\Persistencia\bin\Debug\Integracao90ti.Utils.pdb

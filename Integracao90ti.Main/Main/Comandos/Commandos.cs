@@ -40,16 +40,16 @@ namespace Integracao90ti.Main.Comandos
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            Document doc = commandData.Application.ActiveUIDocument.Document;
-            Autodesk.Revit.ApplicationServices.Application app = commandData.Application.Application;
-            CategorySet catSet = app.Create.NewCategorySet();
+        //    Document doc = commandData.Application.ActiveUIDocument.Document;
+        //    Autodesk.Revit.ApplicationServices.Application app = commandData.Application.Application;
+        //    CategorySet catSet = app.Create.NewCategorySet();
 
-            foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
-                catSet.Insert(doc.Settings.Categories.get_Item(categoria.Categoria));
+        //    foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
+        //        catSet.Insert(doc.Settings.Categories.get_Item(categoria.Categoria));
 
-            SharedParameterFunctions.OpenOrCreateParameter(doc, "Compor90", "Compor90Revit", catSet);
+        //    SharedParameterFunctions.OpenOrCreateParameter(doc, "Compor90", "Compor90Revit", catSet);
 
-            MessageBox.Show("Parâmetro criado com sucesso.");
+        //    MessageBox.Show("Parâmetro criado com sucesso.");
 
             return Result.Succeeded;
         }
@@ -229,23 +229,23 @@ namespace Integracao90ti.Main.Comandos
                 if (saveDialog.ShowDialog() == DialogResult.OK && saveDialog.FileName != "")
                 {
 
-                    Document doc = commandData.Application.ActiveUIDocument.Document;
-                    List<ElementId> naoEspecificados = new List<ElementId>();
+                    //Document doc = commandData.Application.ActiveUIDocument.Document;
+                    //List<ElementId> naoEspecificados = new List<ElementId>();
 
-                    Dictionary<string, double> items = new Dictionary<string, double>();
-                    foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
-                        naoEspecificados.AddRange(BuscarItems(items, doc, categoria.Instancia, categoria.Categoria, categoria.Unidade));
+                    //Dictionary<string, double> items = new Dictionary<string, double>();
+                    //foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
+                    //    naoEspecificados.AddRange(BuscarItems(items, doc, categoria.Instancia, categoria.Categoria, categoria.Unidade));
 
-                    using (StreamWriter sw = new StreamWriter(saveDialog.FileName))
-                    {
-                        foreach (KeyValuePair<string, double> item in items)
-                        {
-                            string descricao = BuscarDescricao(item.Key);
-                            sw.WriteLine(item.Key + ";" + descricao + ";" + item.Value);
-                        }
-                    }
+                    //using (StreamWriter sw = new StreamWriter(saveDialog.FileName))
+                    //{
+                    //    foreach (KeyValuePair<string, double> item in items)
+                    //    {
+                    //        string descricao = BuscarDescricao(item.Key);
+                    //        sw.WriteLine(item.Key + ";" + descricao + ";" + item.Value);
+                    //    }
+                    //}
 
-                    MessageBox.Show("Arquivo exportado com sucesso.");
+                    //MessageBox.Show("Arquivo exportado com sucesso.");
                     return Result.Succeeded;
                 }
                 else

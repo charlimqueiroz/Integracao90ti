@@ -8,5 +8,6 @@ namespace Integracao90ti.Dominio.IRepositorio
         Composicao BuscarPorCodigo(string codigo);
         Composicao BuscarPorNome(string nome);
         IList<Composicao> BuscarPorIdProjeto(long idProjeto);
+        IList<Composicao> BuscarPorIdPlanilha(long idPlanilha);
     }
 }

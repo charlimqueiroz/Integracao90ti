@@ -67,6 +67,10 @@
       <Project>{9FCA8E11-E251-4647-B0FA-C01047FEE681}</Project>
       <Name>Enum</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Integracao90ti.Utils\Utils\Utils.csproj">
+      <Project>{5FA3BB66-347C-4722-B944-CD438901AAD6}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
