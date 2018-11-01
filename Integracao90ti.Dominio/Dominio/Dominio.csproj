@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Integracao90ti.Dominio</RootNamespace>
     <AssemblyName>Integracao90ti.Dominio</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -45,7 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fabrica\ActivatorTransacao.cs" />
+    <Compile Include="Fabrica\FabricaDeRepositorios.cs" />
+    <Compile Include="IRepositorio\Generico\IRepositorioGenerico.cs" />
+    <Compile Include="IRepositorio\Generico\ITransacao.cs" />
+    <Compile Include="IRepositorio\IItemPlanilhaRepositorio.cs" />
+    <Compile Include="IRepositorio\IPlanilhaRepositorio.cs" />
+    <Compile Include="IRepositorio\IComposicaoRepositorio.cs" />
+    <Compile Include="IRepositorio\IProjetoRepositorio.cs" />
+    <Compile Include="IRepositorio\IBaseDadosRepositorio.cs" />
+    <Compile Include="ItemPlanilha.cs" />
+    <Compile Include="Planilha.cs" />
+    <Compile Include="Projeto.cs" />
     <Compile Include="Familias.cs" />
+    <Compile Include="BaseDados.cs" />
+    <Compile Include="Composicao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,5 +68,6 @@
       <Name>Enum</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

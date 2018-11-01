@@ -69,7 +69,7 @@ namespace Integracao90ti.Main.Comandos
             fAssociacao.ShowDialog();
             //form.ElementoSelecionado += Form_ElementoSelecionado;
 
-            
+
 
             //foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
             //{
@@ -183,7 +183,6 @@ namespace Integracao90ti.Main.Comandos
             //trans.Start("Aplicando SINAPI");
             ////form.ShowDialog();
             //trans.Commit();
-
             return Result.Succeeded;
         }
 
@@ -193,7 +192,24 @@ namespace Integracao90ti.Main.Comandos
             Parameter param = _document.GetElement(id).GetParameters("Compor90")[0];
             param.Set(sinapi);
         }
+
     }
+
+    [Transaction(TransactionMode.Manual)]
+    public class FConfiguracaoComando : IExternalCommand
+    {
+        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        {
+            FConfiguracao fConfiguracao = new FConfiguracao();
+            fConfiguracao.StartPosition = FormStartPosition.CenterScreen;
+            fConfiguracao.ShowDialog();
+
+            return Result.Succeeded;
+        }
+    }
+
+
+
 
     [Transaction(TransactionMode.Manual)]
     public class CmdExtrairDados : IExternalCommand

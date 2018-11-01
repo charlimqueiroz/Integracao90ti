@@ -23,30 +23,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Integracao9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Integracao90ti.Utils\Utils\Utils.csproj", "{5FA3BB66-347C-4722-B944-CD438901AAD6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mapeamento", "Mapeamento", "{F0A63A50-2256-453D-BDFE-9D44D4F77E9F}"
-	ProjectSection(SolutionItems) = preProject
-		Integracao90ti.Persistencia\Mapeamento\InsumoMap.cs = Integracao90ti.Persistencia\Mapeamento\InsumoMap.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfiguracaoServidor", "ConfiguracaoServidor", "{9B1AAB65-8315-4510-8A90-F37EE26C8FCF}"
-	ProjectSection(SolutionItems) = preProject
-		Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoBaseServidor.cs = Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoBaseServidor.cs
-		Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoServidor.cs = Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoServidor.cs
-		Integracao90ti.Persistencia\ConfiguracaoServidor\TemplateBaseConfiguracao.cs = Integracao90ti.Persistencia\ConfiguracaoServidor\TemplateBaseConfiguracao.cs
-		Integracao90ti.Persistencia\ConfiguracaoServidor\TemplateConfiguracao.cs = Integracao90ti.Persistencia\ConfiguracaoServidor\TemplateConfiguracao.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{513C7BFF-445A-4DCA-B9FD-6D69F5BE0E8E}"
-	ProjectSection(SolutionItems) = preProject
-		Integracao90ti.Persistencia\Repositorio\InsumoRepositorio.cs = Integracao90ti.Persistencia\Repositorio\InsumoRepositorio.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generico", "Generico", "{89E5F6B0-343A-49EE-BF4C-EAF30DB74033}"
-	ProjectSection(SolutionItems) = preProject
-		Integracao90ti.Persistencia\Repositorio\Generico\RepositorioGenerico.cs = Integracao90ti.Persistencia\Repositorio\Generico\RepositorioGenerico.cs
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "Integracao90ti.Comum\Enumerator\Enum\Enum.csproj", "{9FCA8E11-E251-4647-B0FA-C01047FEE681}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfiguracaoServidor", "Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoServidor.csproj", "{F7843E7E-B246-495C-A182-B5D8EFB34BCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +57,10 @@ Global
 		{9FCA8E11-E251-4647-B0FA-C01047FEE681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FCA8E11-E251-4647-B0FA-C01047FEE681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FCA8E11-E251-4647-B0FA-C01047FEE681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7843E7E-B246-495C-A182-B5D8EFB34BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7843E7E-B246-495C-A182-B5D8EFB34BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7843E7E-B246-495C-A182-B5D8EFB34BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7843E7E-B246-495C-A182-B5D8EFB34BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,11 +71,8 @@ Global
 		{1D4D39C8-B3BE-48FD-9AFC-D2D03663D11D} = {B6F849CB-8FF5-4944-A465-39C80A9A7940}
 		{6CF1D3FC-80B9-41A8-AE59-C914D059FACC} = {9E36AB49-C478-4F45-ADDB-E0EBF3B62114}
 		{5FA3BB66-347C-4722-B944-CD438901AAD6} = {5F41A28E-D09C-4354-B65D-447209A22D7F}
-		{F0A63A50-2256-453D-BDFE-9D44D4F77E9F} = {9E36AB49-C478-4F45-ADDB-E0EBF3B62114}
-		{9B1AAB65-8315-4510-8A90-F37EE26C8FCF} = {9E36AB49-C478-4F45-ADDB-E0EBF3B62114}
-		{513C7BFF-445A-4DCA-B9FD-6D69F5BE0E8E} = {9E36AB49-C478-4F45-ADDB-E0EBF3B62114}
-		{89E5F6B0-343A-49EE-BF4C-EAF30DB74033} = {513C7BFF-445A-4DCA-B9FD-6D69F5BE0E8E}
 		{9FCA8E11-E251-4647-B0FA-C01047FEE681} = {921EF759-A49D-40D4-8D41-720143ACC1BD}
+		{F7843E7E-B246-495C-A182-B5D8EFB34BCC} = {9E36AB49-C478-4F45-ADDB-E0EBF3B62114}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5823E3D4-9CE6-421A-B93E-3A1CA8C52CA5}

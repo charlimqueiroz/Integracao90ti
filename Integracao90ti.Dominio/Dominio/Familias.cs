@@ -15,18 +15,20 @@ namespace Integracao90ti.Dominio
 
         public struct CategoriaSuportada
         {
-            public CategoriaSuportada(Type tipo, Type instancia, BuiltInCategory categoria, Unidade unidade)
+            public CategoriaSuportada(Type tipo, Type instancia, BuiltInCategory categoria, Unidade unidade/*, string nome*/)
             {
                 Tipo = tipo;
                 Instancia = instancia;
                 Categoria = categoria;
                 Unidade = unidade;
+                //Nome = nome;
             }
 
             public Type Tipo { get; private set; }
             public Type Instancia { get; private set; }
             public BuiltInCategory Categoria { get; private set; }
             public Unidade Unidade { get; private set; }
+            //public string Nome { get; private set; }
         }
 
         public static CategoriaSuportada[] CategoriasSuportadas()

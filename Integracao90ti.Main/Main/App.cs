@@ -42,10 +42,10 @@ namespace Integracao90ti.Main
             //atribuirParametro.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Compor90Revit;component/Resources/lista3.png"));
             painel.AddItem(atribuirParametro);
 
-            PushButtonData exportarDados = new PushButtonData("EXPORTAR_DADOS", "Expotar",
-                System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(CmdExtrairDados).FullName);
+            PushButtonData fConfiguracao = new PushButtonData("CONFIGURACAO", "Configuração \nbanco de dados",
+                System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(FConfiguracaoComando).FullName);
             //exportarDados.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Compor90Revit;component/Resources/download.png"));
-            painel.AddItem(exportarDados);
+            painel.AddItem(fConfiguracao);
 
             PushButtonData identificarElemento = new PushButtonData("IDENTIFICA_ELEMENTO", "Identificar \nComponente",
             System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(IdentificarComponente).FullName);

@@ -4,8 +4,9 @@
     <Name>Integracao90ti</Name>
     <Assembly>Integracao90ti.Main.dll</Assembly>
     <FullClassName>Integracao90ti.Main.Aplicativo</FullClassName>
-    <ClientId>c0e40daf-0bd9-4d58-843d-1c91f4fec28b</ClientId>
+    <ClientId>986D2767-E707-4E2C-86C0-93CDFF12C663</ClientId>
     <VendorId>90ti</VendorId>
     <VendorDescription>90 Tecnologia da Informação, charles@noventa.com.br</VendorDescription>
   </AddIn>
 </RevitAddIns>
+

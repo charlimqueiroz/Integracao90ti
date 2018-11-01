@@ -3,3 +3,8 @@ D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\bin\
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enum.csproj.CoreCompileInputs.cache
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.dll
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\bin\Debug\Integracao90ti.Comum.Enum.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\bin\Debug\Integracao90ti.Comum.Enum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Enum.csproj.CoreCompileInputs.cache
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Enumerator\Enum\obj\Debug\Integracao90ti.Comum.Enum.pdb

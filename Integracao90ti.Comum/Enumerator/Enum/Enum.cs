@@ -17,5 +17,12 @@ namespace Integracao90ti.Comum.Enum
             Altura,
             Dimensao
         }
+
+        public enum Dialect
+        {
+            MYSQL,
+            MSSQL2005
+        }
+
     }
 }

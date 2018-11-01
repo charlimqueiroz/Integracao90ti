@@ -3,3 +3,9 @@ D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\bin\Debug\Inte
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Comum.csproj.CoreCompileInputs.cache
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.dll
 D:\Sistemas\Repositorio\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\bin\Debug\Integracao90ti.Comum.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\bin\Debug\Integracao90ti.Comum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Comum.csproj.CoreCompileInputs.cache
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.dll
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Integracao90ti.Comum.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Comum\Comum\obj\Debug\Comum.csprojAssemblyReference.cache

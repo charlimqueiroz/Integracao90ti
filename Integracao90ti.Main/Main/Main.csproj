@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Integracao90ti.Main</RootNamespace>
     <AssemblyName>Integracao90ti.Main</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Comandos\Coletor.cs" />
     <Compile Include="Comandos\Commandos.cs" />
     <Compile Include="Comandos\SharedParameterFunctions.cs" />
     <Compile Include="GUI\FAssociacao.cs">
@@ -60,6 +60,12 @@
     </Compile>
     <Compile Include="GUI\FAssociacao.Designer.cs">
       <DependentUpon>FAssociacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FConfiguracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FConfiguracao.Designer.cs">
+      <DependentUpon>FConfiguracao.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FHelpComposicao.cs">
       <SubType>Form</SubType>
@@ -70,7 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Integracao90ti.addin" />
+    <None Include="Integracao90ti.addin">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Integracao90ti.Comum\Enumerator\Enum\Enum.csproj">
@@ -81,6 +89,29 @@
       <Project>{1D4D39C8-B3BE-48FD-9AFC-D2D03663D11D}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Integracao90ti.Persistencia\ConfiguracaoServidor\ConfiguracaoServidor.csproj">
+      <Project>{F7843E7E-B246-495C-A182-B5D8EFB34BCC}</Project>
+      <Name>ConfiguracaoServidor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integracao90ti.Persistencia\Persistencia\Persistencia.csproj">
+      <Project>{6CF1D3FC-80B9-41A8-AE59-C914D059FACC}</Project>
+      <Name>Persistencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Integracao90ti.Utils\Utils\Utils.csproj">
+      <Project>{5FA3BB66-347C-4722-B944-CD438901AAD6}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GUI\FAssociacao.resx">
+      <DependentUpon>FAssociacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FConfiguracao.resx">
+      <DependentUpon>FConfiguracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FHelpComposicao.resx">
+      <DependentUpon>FHelpComposicao.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
