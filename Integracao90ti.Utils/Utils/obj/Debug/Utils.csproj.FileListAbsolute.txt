@@ -44,3 +44,4 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils\bin\Debug\DBManagedServices.dll
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils\bin\Debug\RevitAPI.xml
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Utils.csproj.CopyComplete
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Utils.csprojAssemblyReference.cache

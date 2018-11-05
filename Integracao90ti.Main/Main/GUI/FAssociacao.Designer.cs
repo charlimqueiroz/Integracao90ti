@@ -43,7 +43,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvAssociarComposicao = new System.Windows.Forms.DataGridView();
-            this.tvFamilias = new System.Windows.Forms.TreeView();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodigoCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescricaoCPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
             this.Associar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdComposicao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdItemPlanilha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tvFamilias = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssociarComposicao)).BeginInit();
@@ -215,15 +215,6 @@
             this.dgvAssociarComposicao.TabIndex = 11;
             this.dgvAssociarComposicao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // tvFamilias
-            // 
-            this.tvFamilias.CheckBoxes = true;
-            this.tvFamilias.Location = new System.Drawing.Point(8, 54);
-            this.tvFamilias.Name = "tvFamilias";
-            this.tvFamilias.Size = new System.Drawing.Size(203, 301);
-            this.tvFamilias.TabIndex = 10;
-            this.tvFamilias.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.tvFamilias_AfterCheck);
-            // 
             // Tipo
             // 
             this.Tipo.DataPropertyName = "Tipo";
@@ -277,6 +268,15 @@
             this.IdItemPlanilha.HeaderText = "IdItemPlanilha";
             this.IdItemPlanilha.Name = "IdItemPlanilha";
             this.IdItemPlanilha.Visible = false;
+            // 
+            // tvFamilias
+            // 
+            this.tvFamilias.CheckBoxes = true;
+            this.tvFamilias.Location = new System.Drawing.Point(8, 54);
+            this.tvFamilias.Name = "tvFamilias";
+            this.tvFamilias.Size = new System.Drawing.Size(203, 301);
+            this.tvFamilias.TabIndex = 10;
+            this.tvFamilias.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvFamilias_NodeMouseClick);
             // 
             // FAssociacao
             // 

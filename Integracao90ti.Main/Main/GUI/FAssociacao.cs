@@ -224,17 +224,6 @@ namespace Integracao90ti.Main.GUI
             }
         }
 
-        private void tvFamilias_AfterCheck(object sender, TreeViewEventArgs e)
-        {
-            CheckNode(e.Node);
-
-
-            foreach (TreeNode nodo in e.Node.Nodes)
-            {
-                if (nodo.Checked)
-                    IncluirItemGrade(false, 0, nodo.Text, string.Empty, string.Empty, string.Empty, 0, 0, Convert.ToDouble(nodo.Tag));
-            }
-        }
 
         private void IncluirItemGrade(bool atualizar, int index, string tipo, string codigoComposicao, string descricaoComposicao, string codigoItemPlanilha, long idItemPlanilha, long idComposicao, double quantidade)
         {
@@ -275,6 +264,125 @@ namespace Integracao90ti.Main.GUI
         private void cbProjeto_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarComboPlanilha();
+        }
+
+
+        private void MarcarNosAnteriores(TreeNode noPai, bool valor)
+        {
+            if (noPai.Parent != null)
+            {
+                if (!valor)
+                {
+                    if (!this.VerificaNosSelecionados(noPai.Parent.Nodes))
+                    {
+                        noPai.Checked = valor;
+                        this.MarcarNosAnteriores(noPai.Parent, valor);
+                    }
+                }
+                else
+                {
+                    noPai.Checked = valor;
+                    this.MarcarNosAnteriores(noPai.Parent, valor);
+                }
+            }
+            else
+            {
+                noPai.Checked = valor;
+            }
+        }
+
+        private void MarcarNosPosteriores(TreeNodeCollection listaNos, bool valor)
+        {
+            foreach (TreeNode n in listaNos)
+            {
+                n.Checked = valor;
+
+                if (n.Nodes.Count > 0)
+                    this.MarcarNosPosteriores(n.Nodes, valor);
+            }
+        }
+
+        private bool VerificaNosSelecionados(TreeNodeCollection listaNos)
+        {
+            foreach (TreeNode n in listaNos)
+            {
+                if (n.Checked)
+                    return true;
+                else if (n.Nodes.Count > 0)
+                    this.VerificaNosSelecionados(n.Nodes);
+            }
+            return false;
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            this.MarcarNosAnteriores(e.Node, e.Node.Checked);
+
+            this.MarcarNosPosteriores(e.Node.Nodes, e.Node.Checked);
+        }
+
+        private void tvFamilias_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            this.MarcarNosAnteriores(e.Node, e.Node.Checked);
+
+            this.MarcarNosPosteriores(e.Node.Nodes, e.Node.Checked);
+
+            if (e.Node.Checked)
+            {
+                if (e.Node.Nodes.Count > 0)
+                {
+                    foreach (TreeNode nodo in e.Node.Nodes)
+                    {
+                        if (nodo.Checked)
+                            IncluirItemGrade(false, 0, nodo.Text, string.Empty, string.Empty, string.Empty, 0, 0, Convert.ToDouble(nodo.Tag));
+                    }
+                }
+                else
+                {
+                    if (e.Node.Parent != null)
+                        IncluirItemGrade(false, 0, e.Node.Text, string.Empty, string.Empty, string.Empty, 0, 0, Convert.ToDouble(e.Node.Tag));
+                }
+            }
+            else
+            {
+                if (e.Node.Nodes.Count > 0)
+                {
+                    ExcluirItemGrade(e);
+                }
+                else
+                {
+                    if (e.Node.Parent != null)
+                        ExcluirItemGradeDetalhe(e.Node); 
+                }
+
+                
+            }
+        }
+
+        private void ExcluirItemGrade(TreeNodeMouseClickEventArgs e)
+        {
+            foreach (TreeNode nodo in e.Node.Nodes)
+            {
+                if (!nodo.Checked)
+                {
+                    ExcluirItemGradeDetalhe(nodo);
+                    dgvAssociarComposicao.Refresh();
+                }
+            }
+        }
+
+        private void ExcluirItemGradeDetalhe(TreeNode nodo)
+        {
+            for (int i = dgvAssociarComposicao.RowCount - 1; i >= 0; i--)
+            {
+                if (dgvAssociarComposicao.Rows[i].Cells[1].Value != null)
+                {
+                    if (dgvAssociarComposicao.Rows[i].Cells[1].Value.ToString() == nodo.Name)
+                    {
+                        dgvAssociarComposicao.Rows.RemoveAt(i);
+                    }
+                }
+            }
         }
     }
 }
