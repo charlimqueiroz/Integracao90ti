@@ -12,5 +12,13 @@ namespace Integracao90ti.Dominio.IRepositorio.Generico
         IQueryable<T> Todos();
         T BuscarPor(Expression<Func<T, bool>> expression);
         IQueryable<T> FiltrarPor(Expression<Func<T, bool>> expression);
+        void SaveOrUpdate(T entity);
+        void Save(T entity);
+        void SaveAndFlush(T entity);
+        void Delete(T entity);
+        void DeleteAndFlush(T entity);
+        void Update(T entity);
+        void UpdateAndFlush(T entity);
+
     }
 }

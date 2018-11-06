@@ -39,12 +39,14 @@ namespace Integracao90ti.Main
 
             PushButtonData atribuirParametro = new PushButtonData("ATRIBUIR_PARAMETRO", "Integração",
                 System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(CmdAtribuirParametros).FullName);
-            //atribuirParametro.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Compor90Revit;component/Resources/lista3.png"));
-            painel.AddItem(atribuirParametro);
+            atribuirParametro.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweet.png"));
+            //atribuirParametro.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Integracao90ti\Integracao90ti.Main;component/Resources/lista3.png"));
+            painel.AddItem(atribuirParametro);//E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweete.png
 
             PushButtonData fConfiguracao = new PushButtonData("CONFIGURACAO", "Configuração \nbanco de dados",
                 System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(FConfiguracaoComando).FullName);
-            //exportarDados.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Compor90Revit;component/Resources/download.png"));
+            //fConfiguracao.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Integracao90ti.Main;component/Resources/fa-retweete.png"));
+            fConfiguracao.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweete.png"));
             painel.AddItem(fConfiguracao);
 
             PushButtonData identificarElemento = new PushButtonData("IDENTIFICA_ELEMENTO", "Identificar \nComponente",

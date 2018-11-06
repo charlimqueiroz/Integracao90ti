@@ -224,7 +224,6 @@ namespace Integracao90ti.Main.GUI
             }
         }
 
-
         private void IncluirItemGrade(bool atualizar, int index, string tipo, string codigoComposicao, string descricaoComposicao, string codigoItemPlanilha, long idItemPlanilha, long idComposicao, double quantidade)
         {
             if (atualizar)
@@ -352,10 +351,10 @@ namespace Integracao90ti.Main.GUI
                 else
                 {
                     if (e.Node.Parent != null)
-                        ExcluirItemGradeDetalhe(e.Node); 
+                        ExcluirItemGradeDetalhe(e.Node);
                 }
 
-                
+
             }
         }
 
@@ -381,6 +380,24 @@ namespace Integracao90ti.Main.GUI
                     {
                         dgvAssociarComposicao.Rows.RemoveAt(i);
                     }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            for (int i = dgvAssociarComposicao.RowCount - 1; i >= 0; i--)
+            {
+                decimal quantidade = Convert.ToDecimal(dgvAssociarComposicao.Rows[i].Cells[5].Value);
+
+                if (dgvAssociarComposicao.Rows[i].Cells[6].Value != null && quantidade != 0)
+                {
+                    ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(Convert.ToInt64(dgvAssociarComposicao.Rows[i].Cells[6].Value));
+
+                    itemPlanilha.Quantidade = quantidade;
+
+                    FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.SaveOrUpdate(itemPlanilha);
+
                 }
             }
         }

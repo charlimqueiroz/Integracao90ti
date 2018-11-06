@@ -12,6 +12,7 @@ namespace Integracao90ti.Dominio
         public virtual string Codigo { get; set; }
         public virtual string Nome { get; set; }
         public virtual string Descricao { get; set; }
+        public virtual decimal Quantidade { get; set; }
 
         #endregion
 
