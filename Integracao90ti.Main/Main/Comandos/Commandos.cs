@@ -92,10 +92,7 @@ namespace Integracao90ti.Main.Comandos
             return Result.Succeeded;
         }
     }
-
-
-
-
+         
     [Transaction(TransactionMode.Manual)]
     public class CmdExtrairDados : IExternalCommand
     {

@@ -53,6 +53,7 @@ namespace Integracao90ti.Main.GUI
 
         private void IncluirItemGradeItemPlanilha(long idComposicao)
         {
+            dataTableItensPlanilha.Clear();
             List<ItemPlanilha> itensPlanilha = new List<ItemPlanilha>();
 
             if (this.idPlanilha == 0)
@@ -64,7 +65,7 @@ namespace Integracao90ti.Main.GUI
             {
                 DataRow dataRow = dataTableItensPlanilha.Rows.Add(new object[]
                 {
-                    item.Codigo, item.Nome, item.Id
+                    item.Planilha.Nome, item.Codigo, item.Nome, item.Id
                 });
             }
         }
@@ -82,6 +83,7 @@ namespace Integracao90ti.Main.GUI
 
         private void CriarDataTableEGridItensPlanilha()
         {
+            dataTableItensPlanilha.Columns.Add("Planilha", typeof(string));
             dataTableItensPlanilha.Columns.Add("Codigo", typeof(string));
             dataTableItensPlanilha.Columns.Add("Descricao", typeof(string));
             dataTableItensPlanilha.Columns.Add("IdItemPlanilha", typeof(long));
@@ -105,7 +107,7 @@ namespace Integracao90ti.Main.GUI
                 var dtRow = rows[dgvComposicao.CurrentRow.Index];
                 idComposicaoRetorno = (long)dtRow["Id"];
 
-                if (dgvItemPlanilha.Rows.Count > 1)
+                if (dgvItemPlanilha.Rows.Count > 0)
                 {                    
                     foreach (DataGridViewRow row in dgvItemPlanilha.Rows)
                     {
@@ -114,32 +116,9 @@ namespace Integracao90ti.Main.GUI
                             idItemPlanilhaRetorno = (long)dgvItemPlanilha.Rows[row.Index].Cells["IdItemPlanilha"].Value;
                             break;
                         }
-
-                        //foreach (DataGridViewCell cell in dgvItemPlanilha.Rows[row.Index].Cells[0])
-                        //{
-                        //    if (cell.ColumnIndex == 0)
-                        //    {
-                        //        if (cell.Value != null)
-                        //        {
-                        //            id
-                        //        }
-                        //        else
-                        //        {
-                        //            //Desmarcado
-                        //        }
-                        //    }
-                        //}
                     }
-
-                    //foreach (DataRowCollection item in dgvItemPlanilha.Rows)
-                    //{
-                    //    item
-                    //}
-                    //CheckBox cb = (CheckBox)e.Row.FindControl("ckblalala");
                 }
-
             }
-
         }
 
         internal long GetIdItemPlanilha()
@@ -150,6 +129,32 @@ namespace Integracao90ti.Main.GUI
         internal long GetIdComposicao()
         {
             return idComposicaoRetorno;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Buscar(dgvComposicao.CurrentRow.Index + 1, false);
+        }
+
+        private void Buscar(int linha, bool reiniciou)
+        {
+            for (int i = linha; i <= dgvComposicao.RowCount - 1; i++)
+            {
+                for (int j = 0; j <= dgvComposicao.ColumnCount - 1; j++)
+                {
+                    if (dgvComposicao.Rows[i].Cells[j].Value != null && dgvComposicao.Rows[i].Cells[j].Value != DBNull.Value)
+                    {
+                        if (dgvComposicao.Rows[i].Cells[j].Value.ToString().ToUpper().Contains(txtBuscar.Text.ToUpper()))
+                        {
+                            dgvComposicao.CurrentCell = dgvComposicao.Rows[i].Cells[j];
+                            return;
+                        }
+                    }
+                }
+            }
+
+            if (!reiniciou)
+                Buscar(0, true);
         }
     }
 }
