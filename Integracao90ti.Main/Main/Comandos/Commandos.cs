@@ -56,7 +56,7 @@ namespace Integracao90ti.Main.Comandos
     }
 
     [Transaction(TransactionMode.Manual)]
-    public class CmdAtribuirParametros : IExternalCommand
+    public class FAssociacaoComando : IExternalCommand
     {
         Document _document;
 
@@ -67,122 +67,7 @@ namespace Integracao90ti.Main.Comandos
             FAssociacao fAssociacao = new FAssociacao(_document);
             fAssociacao.StartPosition = FormStartPosition.CenterScreen;
             fAssociacao.ShowDialog();
-            //form.ElementoSelecionado += Form_ElementoSelecionado;
 
-
-
-            //foreach (Familias.CategoriaSuportada categoria in Familias.CategoriasSuportadas())
-            //{
-            //    System.Windows.Forms.TreeNode treeNodeCategoria = null;
-
-            //    FilteredElementCollector tipos = new FilteredElementCollector(_document);
-            //    tipos.OfCategory(categoria.Categoria);
-            //    tipos.OfClass(categoria.Tipo);
-
-            //    foreach (var tipo in tipos)
-            //    {
-            //        List<Element> elementos = new List<Element>();
-            //        List<System.Windows.Forms.TreeNode> listaNosInstancias = new List<System.Windows.Forms.TreeNode>();
-
-            //        FilteredElementCollector instancias = new FilteredElementCollector(_document);
-            //        instancias.OfClass(categoria.Instancia);
-            //        instancias.OfCategory(categoria.Categoria);
-
-            //        if (tipo is FamilySymbol)
-            //            elementos = instancias.WherePasses(new FamilyInstanceFilter(_document, tipo.Id)).Select(i => i).ToList();
-            //        else
-            //        if (tipo is WallType)
-            //            elementos = instancias.Where(i => (i as Wall).WallType.Id == tipo.Id).ToList();
-            //        else
-            //        if (tipo is FloorType)
-            //            elementos = instancias.Where(i => (i as Floor).FloorType.Id == tipo.Id).ToList();
-            //        else
-            //        if (tipo is StairsType)
-            //            elementos = instancias.WherePasses(new ElementCategoryFilter(BuiltInCategory.OST_Stairs, false)).ToList();
-
-            //        foreach (Element elemento in elementos)
-            //        {
-            //            if (elemento.GetParameters("Compor90").Count != 1)
-            //                continue;
-
-            //            if (treeNodeCategoria == null)
-            //            {
-            //                string key = string.Empty;
-
-
-            //                if (tipo is FamilySymbol)
-            //                    key = (tipo as FamilySymbol).FamilyName;
-            //                else
-            //                if (tipo is WallType)
-            //                    key = (tipo as WallType).FamilyName;
-            //                else
-            //                if (tipo is FloorType)
-            //                    key = (tipo as FloorType).FamilyName;
-            //                else
-            //                if (tipo is StairsType)
-            //                    key = (tipo as StairsType).FamilyName;
-
-            //                treeNodeCategoria = new System.Windows.Forms.TreeNode(key);
-            //                treeNodeCategoria.Text = key;
-            //                treeNodeCategoria.Tag = tipo.Id.IntegerValue.ToString();
-            //            }
-
-            //            bool encontrou = false;
-            //            // verifico se a instancia existe no nó de categoria
-            //            for (int i = 0; i < treeNodeCategoria.Nodes.Count; i++)
-            //            {
-            //                if (treeNodeCategoria.Nodes[i].Text == elemento.Name)
-            //                {
-            //                    encontrou = true;
-            //                    break;
-            //                }
-            //            }
-
-            //            System.Windows.Forms.TreeNode treeNodeInstancia = new System.Windows.Forms.TreeNode(elemento.Name);
-            //            treeNodeInstancia.Tag = elemento.Id.IntegerValue.ToString();
-
-            //            if (!encontrou)
-            //            {
-            //                treeNodeCategoria.Nodes.Add(treeNodeInstancia);
-            //            }
-
-            //            listaNosInstancias.Add(treeNodeInstancia);
-            //        }
-
-            //        try
-            //        {
-            //            if (treeNodeCategoria != null)
-            //            {
-            //                for (int i = 0; i < treeNodeCategoria.Nodes.Count; i++)
-            //                {
-            //                    foreach (var item in listaNosInstancias)
-            //                    {
-            //                        if (treeNodeCategoria.Nodes[i].Text == item.Text)
-            //                        {
-            //                            System.Windows.Forms.TreeNode treeNodeInstancia = new System.Windows.Forms.TreeNode(item.Text);
-            //                            treeNodeInstancia.Tag = item.Tag.ToString();
-            //                            treeNodeCategoria.Nodes[i].Nodes.Add(treeNodeInstancia);
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //        catch (Exception e)
-            //        {
-            //            string erro = e.Message;
-            //        }
-            //    }
-
-            //    if (treeNodeCategoria != null)
-            //    {
-            //        //form.Tree.Add(treeNodeCategoria);
-            //    }
-            //}
-
-            //Transaction trans = new Transaction(_document);
-            //trans.Start("Aplicando SINAPI");
-            ////form.ShowDialog();
-            //trans.Commit();
             return Result.Succeeded;
         }
 

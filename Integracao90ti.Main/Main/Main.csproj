@@ -118,13 +118,13 @@
       <DependentUpon>FHelpComposicao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\icons8-chave-inglesa-30.png" />
-    <Content Include="Resources\icons8-retuitar-30.png" />
+    <Resource Include="Resources\icons8-chave-inglesa-30.png" />
+    <Resource Include="Resources\icons8-retuitar-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

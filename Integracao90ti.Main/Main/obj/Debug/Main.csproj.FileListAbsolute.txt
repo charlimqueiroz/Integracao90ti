@@ -175,3 +175,4 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\b
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\bin\Debug\Antlr3.Runtime.xml
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\bin\Debug\Iesi.Collections.xml
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\obj\Debug\Integracao90ti.Main.Properties.Resources.resources
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\obj\Debug\Integracao90ti.Main.g.resources
