@@ -390,7 +390,7 @@ namespace Integracao90ti.Main.GUI
             {
                 decimal quantidade = Convert.ToDecimal(dgvAssociarComposicao.Rows[i].Cells[5].Value);
 
-                if (dgvAssociarComposicao.Rows[i].Cells[6].Value != null && quantidade != 0)
+                if (dgvAssociarComposicao.Rows[i].Cells[6].Value != null && dgvAssociarComposicao.Rows[i].Cells[6].Value != DBNull.Value && quantidade != 0)
                 {
                     ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(Convert.ToInt64(dgvAssociarComposicao.Rows[i].Cells[6].Value));
 

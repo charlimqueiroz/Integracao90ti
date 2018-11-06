@@ -123,10 +123,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fa-retweete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\fa-retweet.png" />
+    <Content Include="Resources\icons8-chave-inglesa-30.png" />
+    <Content Include="Resources\icons8-retuitar-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

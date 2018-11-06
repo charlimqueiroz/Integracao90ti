@@ -30,28 +30,28 @@ namespace Integracao90ti.Main
             a.CreateRibbonTab("Integração 90ti");
             RibbonPanel painel = a.CreateRibbonPanel("Integração 90ti", "Integração 90ti");
 
-            PushButtonData aplicarParametro = new PushButtonData("APLICAR_PARAMETRO", "Aplicar",
-                System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(CmdAplicarParametros).FullName);
-            // Set the large image shown on button            
+            //PushButtonData aplicarParametro = new PushButtonData("APLICAR_PARAMETRO", "Aplicar",
+            //    System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(CmdAplicarParametros).FullName);
+            //Set the large image shown on button
             //aplicarParametro.LargeImage = new BitmapImage(new Uri(@"D:\Sistemas\Compor\work\Sinapi-Revit\SinapiRevit\Resources\aplicar.png"));
             //aplicarParametro.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Compor90Revit;component/Resources/aplicar.png"));
-            painel.AddItem(aplicarParametro);
+            //painel.AddItem(aplicarParametro);
 
-            PushButtonData atribuirParametro = new PushButtonData("ATRIBUIR_PARAMETRO", "Integração",
+            PushButtonData fAssociacao = new PushButtonData("ATRIBUIR_PARAMETRO", "Integração",
                 System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(CmdAtribuirParametros).FullName);
-            atribuirParametro.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweet.png"));
+            fAssociacao.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\icons8-retuitar-30.png"));
             //atribuirParametro.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Integracao90ti\Integracao90ti.Main;component/Resources/lista3.png"));
-            painel.AddItem(atribuirParametro);//E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweete.png
+            painel.AddItem(fAssociacao);
 
             PushButtonData fConfiguracao = new PushButtonData("CONFIGURACAO", "Configuração \nbanco de dados",
                 System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(FConfiguracaoComando).FullName);
             //fConfiguracao.LargeImage = new BitmapImage(new Uri(@"pack://application:,,,/Integracao90ti.Main;component/Resources/fa-retweete.png"));
-            fConfiguracao.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\fa-retweete.png"));
+            fConfiguracao.LargeImage = new BitmapImage(new Uri(@"E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Main\Main\Resources\icons8-chave-inglesa-30.png"));
             painel.AddItem(fConfiguracao);
 
-            PushButtonData identificarElemento = new PushButtonData("IDENTIFICA_ELEMENTO", "Identificar \nComponente",
-            System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(IdentificarComponente).FullName);
-            painel.AddItem(identificarElemento);
+            //PushButtonData identificarElemento = new PushButtonData("IDENTIFICA_ELEMENTO", "Identificar \nComponente",
+            //System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(IdentificarComponente).FullName);
+            //painel.AddItem(identificarElemento);
 
             //PushButtonData selecionarTodosElementos = new PushButtonData("SELECIONAR_ELEMENTOS", "Listar \nElementos",
             //    System.Reflection.Assembly.GetExecutingAssembly().Location, typeof(ListarTodosElementos).FullName);
