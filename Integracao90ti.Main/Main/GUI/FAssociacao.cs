@@ -202,7 +202,7 @@ namespace Integracao90ti.Main.GUI
                 {
                     ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(fHelpComposicao.GetIdItemPlanilha());
 
-                    IncluirItemGrade(true, e.RowIndex, string.Empty, itemPlanilha.Composicao.Codigo, itemPlanilha.Composicao.Descricao, itemPlanilha.Planilha.Nome, itemPlanilha.Codigo, itemPlanilha.Id, itemPlanilha.Composicao.Id, 0);
+                    IncluirItemGrade(true, e.RowIndex, string.Empty, itemPlanilha.Composicao.CodigoComposicao(), itemPlanilha.Composicao.DescricaoVisualizacao(), itemPlanilha.Planilha.Nome, itemPlanilha.Codigo, itemPlanilha.Id, itemPlanilha.Composicao.Id, 0);
                 }
                 else
                     if (fHelpComposicao.GetIdComposicao() != 0)
@@ -221,7 +221,7 @@ namespace Integracao90ti.Main.GUI
 
                 dataRow["CodigoCPU"] = codigoComposicao;
                 dataRow["DescricaoCPU"] = descricaoComposicao;
-                dataRow["Planilha"] = codigoItemPlanilha;
+                dataRow["Planilha"] = planilha;
                 dataRow["CodigoItem"] = codigoItemPlanilha;
                 dataRow["IdItemPlanilha"] = idItemPlanilha;
                 dataRow["IdComposicao"] = idComposicao;
@@ -368,11 +368,11 @@ namespace Integracao90ti.Main.GUI
         {
             for (int i = dgvAssociarComposicao.RowCount - 1; i >= 0; i--)
             {
-                decimal quantidade = Convert.ToDecimal(dgvAssociarComposicao.Rows[i].Cells[5].Value);
+                decimal quantidade = Convert.ToDecimal(dgvAssociarComposicao.Rows[i].Cells[6].Value);
 
-                if (dgvAssociarComposicao.Rows[i].Cells[6].Value != null && dgvAssociarComposicao.Rows[i].Cells[6].Value != DBNull.Value && quantidade != 0)
+                if (dgvAssociarComposicao.Rows[i].Cells[7].Value != null && dgvAssociarComposicao.Rows[i].Cells[7].Value != DBNull.Value && Convert.ToDecimal(dgvAssociarComposicao.Rows[i].Cells[7].Value) != 0 && quantidade != 0)
                 {
-                    ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(Convert.ToInt64(dgvAssociarComposicao.Rows[i].Cells[6].Value));
+                    ItemPlanilha itemPlanilha = FabricaDeRepositorios<IItemPlanilhaRepositorio>.Instancia.BuscarPorId(Convert.ToInt64(dgvAssociarComposicao.Rows[i].Cells[7].Value));
 
                     itemPlanilha.Quantidade = quantidade;
 

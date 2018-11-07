@@ -9,3 +9,9 @@ E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistenci
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.dll
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.pdb
 E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.csprojAssemblyReference.cache
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\bin\Debug\ConfiguracaoServidor.dll
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\bin\Debug\ConfiguracaoServidor.pdb
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.csprojAssemblyReference.cache
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.csproj.CoreCompileInputs.cache
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.dll
+C:\Sistemas\Integracao90ti\Integracao90ti.Persistencia\ConfiguracaoServidor\obj\Debug\ConfiguracaoServidor.pdb

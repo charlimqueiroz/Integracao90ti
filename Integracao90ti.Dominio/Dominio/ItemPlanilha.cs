@@ -25,6 +25,16 @@ namespace Integracao90ti.Dominio
 
         #endregion
 
+        #region Propriedades Publicas
+
+        public virtual string DescricaoVisualizacao()
+        {
+            if (string.IsNullOrEmpty(Descricao))
+                return Nome;
+            else
+                return Descricao;
+        }
+        #endregion
 
     }
 }

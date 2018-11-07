@@ -46,7 +46,7 @@ namespace Integracao90ti.Main.GUI
             {
                 DataRow dataRow = dataTableComposicao.Rows.Add(new object[]
                 {
-                    composicao.Codigo, composicao.Nome, composicao.Unidade, composicao.PrecoServico, composicao.Id
+                    composicao.CodigoComposicao(), composicao.DescricaoVisualizacao(), composicao.Unidade, composicao.ValorTotalCusto, composicao.Id
                 });
             }
         }
@@ -65,7 +65,7 @@ namespace Integracao90ti.Main.GUI
             {
                 DataRow dataRow = dataTableItensPlanilha.Rows.Add(new object[]
                 {
-                    item.Planilha.Nome, item.Codigo, item.Nome, item.Id
+                    item.Planilha.Nome, item.Codigo, item.DescricaoVisualizacao(), item.Id
                 });
             }
         }
