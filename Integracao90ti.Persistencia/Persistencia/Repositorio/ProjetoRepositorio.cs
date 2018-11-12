@@ -10,16 +10,16 @@ namespace Integracao90ti.Persistencia.Repositorio
     {
         public Projeto BuscarPorCodigo(string codigo)
         {
-            return GetSessao().Query<Projeto>().Where(i => i.Codigo == codigo).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<Projeto>().Where(i => i.Codigo == codigo).FirstOrDefault();
         }
         public Projeto BuscarPorNome(string nome)
         {
-            return GetSessao().Query<Projeto>().Where(i => i.Nome == nome).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<Projeto>().Where(i => i.Nome == nome).FirstOrDefault();
         }
 
         public IList<Projeto> BuscarPorIdBaseDados(long idBaseDados)
         {
-            return GetSessao().Query<Projeto>().Where(i => i.BaseDados.Id == idBaseDados).ToList();
+            return NHibernateHelper.GetSession().Query<Projeto>().Where(i => i.BaseDados.Id == idBaseDados).ToList();
         }
     }
 }

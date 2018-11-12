@@ -4,39 +4,37 @@ using System.Collections.Generic;
 using System;
 using System.Linq.Expressions;
 using Integracao90ti.Dominio.IRepositorio.Generico;
+using NHibernate.Context;
 
 namespace Integracao90ti.Persistencia.Repositorio.Generico
 {
     public class RepositorioGenerico<T> : IRepositorioGenerico<T> where T : class
     {
-        private readonly ISession _session;
-
         public RepositorioGenerico()
         {
-            NHibernateHelper NHHelper = new NHibernateHelper();
-            _session = NHHelper.SessionFactory.OpenSession();
+
         }
 
-        public ISession GetSessao()
+        public void ReiniciarConexao()
         {
-            return _session;
+            NHibernateHelper.GetSession().Close();
         }
 
         #region Implementation of IRepository<T>
 
         public T BuscarPorId(long id)
         {
-            return _session.Get<T>(id);
+            return NHibernateHelper.GetSession().Get<T>(id);
         }
 
         public IList<T> BuscarTodos()
         {
-            return _session.Query<T>().ToList(); ;
-        }       
+            return NHibernateHelper.GetSession().Query<T>().ToList(); ;
+        }
 
         public IQueryable<T> Todos()
         {
-            return _session.Query<T>();
+            return NHibernateHelper.GetSession().Query<T>();
         }
 
         public T BuscarPor(Expression<Func<T, bool>> expression)
@@ -52,12 +50,9 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
         #region SaveOrUpdate
         public void SaveOrUpdate(T entity)
         {
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.SaveOrUpdate(entity);
-                transaction.Commit();
-            }
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().SaveOrUpdate(entity);
+            NHibernateHelper.CommitTransaction();
         }
 
         #endregion
@@ -67,12 +62,10 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
         {
             if (entity == null)
                 throw new ArgumentNullException("Não é possível salvar uma entidade nula");
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Save(entity);
-                transaction.Commit();
-            }
+
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Save(entity);
+            NHibernateHelper.CommitTransaction();
         }
 
         public void SaveAndFlush(T entity)
@@ -80,13 +73,10 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
             if (entity == null)
                 throw new ArgumentNullException("Não é possível salvar uma entidade nula");
 
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Save(entity);
-                transaction.Commit();
-            }
-            _session.Flush();
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Save(entity);
+            NHibernateHelper.CommitTransaction();
+            NHibernateHelper.GetSession().Flush();
         }
 
         #endregion
@@ -96,25 +86,18 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
         {
             if (entity == null)
                 throw new ArgumentNullException("Não é possível excluir uma entidade nula");
- 
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Delete(entity);
-                transaction.Commit();
-            }
+
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Delete(entity);
+            NHibernateHelper.CommitTransaction();
         }
 
         public void DeleteAndFlush(T entity)
         {
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Delete(entity);
-                transaction.Commit();
-            }
-
-            _session.Flush();
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Delete(entity);
+            NHibernateHelper.CommitTransaction();
+            NHibernateHelper.GetSession().Flush();
         }
 
         //public void Delete(ID id)
@@ -140,12 +123,9 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
             if (entity == null)
                 throw new ArgumentNullException("Não é possível atualizar uma entidade nula");
 
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Update(entity);
-                transaction.Commit();
-            }
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Update(entity);
+            NHibernateHelper.CommitTransaction();
         }
 
         public void UpdateAndFlush(T entity)
@@ -153,13 +133,10 @@ namespace Integracao90ti.Persistencia.Repositorio.Generico
             if (entity == null)
                 throw new ArgumentNullException("Não é possível atualizar uma entidade nula");
 
-            using (var transaction = _session.BeginTransaction())
-            {
-                _session.SetBatchSize(1000);
-                _session.Update(entity);
-                transaction.Commit();
-            }
-            _session.Flush();
+            NHibernateHelper.BeginTransaction();
+            NHibernateHelper.GetSession().Update(entity);
+            NHibernateHelper.CommitTransaction();
+            NHibernateHelper.GetSession().Flush();
         }
         #endregion
 

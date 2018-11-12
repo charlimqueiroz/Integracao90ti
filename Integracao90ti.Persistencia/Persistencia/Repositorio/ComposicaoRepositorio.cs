@@ -11,16 +11,16 @@ namespace Integracao90ti.Persistencia.Repositorio
     {
         public Composicao BuscarPorCodigo(string codigo)
         {
-            return GetSessao().Query<Composicao>().Where(i => i.Codigo == codigo).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<Composicao>().Where(i => i.Codigo == codigo).FirstOrDefault();
         }
         public Composicao BuscarPorNome(string nome)
         {
-            return GetSessao().Query<Composicao>().Where(i => i.Nome == nome).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<Composicao>().Where(i => i.Nome == nome).FirstOrDefault();
         }
 
         public IList<Composicao> BuscarPorIdProjeto(long idProjeto)
         {
-            return GetSessao().Query<Composicao>().Where(i => i.Projeto.Id == idProjeto).ToList();
+            return NHibernateHelper.GetSession().Query<Composicao>().Where(i => i.Projeto.Id == idProjeto).ToList();
         }
 
         public IList<Composicao> BuscarPorIdPlanilha(long idPlanilha)
@@ -32,7 +32,7 @@ namespace Integracao90ti.Persistencia.Repositorio
                          "join planilha on planilha.id = item_planilha.Planilha_Id " +
                          "where planilha.id = " + idPlanilha.ToString();
 
-            IQuery q = GetSessao().CreateSQLQuery(sql).AddEntity(typeof(Composicao));
+            IQuery q = NHibernateHelper.GetSession().CreateSQLQuery(sql).AddEntity(typeof(Composicao));
 
             return q.List<Composicao>().ToList();
         }

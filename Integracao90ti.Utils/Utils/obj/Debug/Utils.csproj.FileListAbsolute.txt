@@ -86,3 +86,4 @@ C:\Sistemas\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Utils.csproj.Cor
 C:\Sistemas\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Utils.csproj.CopyComplete
 C:\Sistemas\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Integracao90ti.Utils.dll
 C:\Sistemas\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Integracao90ti.Utils.pdb
+E:\Sistemas\NeoCompor\work\PluginRevit\Integracao90ti\Integracao90ti.Utils\Utils\obj\Debug\Utils.csprojAssemblyReference.cache

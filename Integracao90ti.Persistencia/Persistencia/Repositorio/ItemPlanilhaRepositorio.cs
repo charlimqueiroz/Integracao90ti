@@ -10,26 +10,26 @@ namespace Integracao90ti.Persistencia.Repositorio
     {
         public ItemPlanilha BuscarPorCodigo(string codigo)
         {
-            return GetSessao().Query<ItemPlanilha>().Where(i => i.Codigo == codigo).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<ItemPlanilha>().Where(i => i.Codigo == codigo).FirstOrDefault();
         }
         public ItemPlanilha BuscarPorNome(string nome)
         {
-            return GetSessao().Query<ItemPlanilha>().Where(i => i.Nome == nome).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<ItemPlanilha>().Where(i => i.Nome == nome).FirstOrDefault();
         }
 
         public IList<ItemPlanilha> BuscarPorIdPlanilha(long idPlanilha)
         {
-            return GetSessao().Query<ItemPlanilha>().Where(i => i.Planilha.Id == idPlanilha).ToList();
+            return NHibernateHelper.GetSession().Query<ItemPlanilha>().Where(i => i.Planilha.Id == idPlanilha).ToList();
         }
 
         public IList<ItemPlanilha> BuscarPorIdPlanilhaEComposicao(long idComposicao, long idPlanilha)
         {
-            return GetSessao().Query<ItemPlanilha>().Where(i => i.Planilha.Id == idPlanilha && i.Composicao.Id == idComposicao).ToList();
+            return NHibernateHelper.GetSession().Query<ItemPlanilha>().Where(i => i.Planilha.Id == idPlanilha && i.Composicao.Id == idComposicao).ToList();
         }
 
         public IList<ItemPlanilha> BuscarPorIdComposicao(long idComposicao)
         {
-            return GetSessao().Query<ItemPlanilha>().Where(i => i.Composicao.Id == idComposicao).ToList();
+            return NHibernateHelper.GetSession().Query<ItemPlanilha>().Where(i => i.Composicao.Id == idComposicao).ToList();
         }
     }
 }

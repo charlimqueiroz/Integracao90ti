@@ -9,11 +9,11 @@ namespace Integracao90ti.Persistencia.Repositorio
     {
         public BaseDados BuscarPorCodigo(string codigo)
         {
-            return GetSessao().Query<BaseDados>().Where(i => i.Codigo == codigo).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<BaseDados>().Where(i => i.Codigo == codigo).FirstOrDefault();
         }
         public BaseDados BuscarPorNome(string nome)
         {
-            return GetSessao().Query<BaseDados>().Where(i => i.Nome == nome).FirstOrDefault();
+            return NHibernateHelper.GetSession().Query<BaseDados>().Where(i => i.Nome == nome).FirstOrDefault();
         }
     }
 }

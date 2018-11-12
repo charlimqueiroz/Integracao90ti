@@ -246,8 +246,7 @@ namespace Integracao90ti.Main.GUI
         {
             CarregarComboPlanilha();
         }
-
-
+        
         private void MarcarNosAnteriores(TreeNode noPai, bool valor)
         {
             if (noPai.Parent != null)
